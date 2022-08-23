@@ -1,0 +1,34 @@
+---
+
+# docs: https://organize.readthedocs.io/en/latest/
+
+rules:
+  #- name: My first rule
+  #  locations:
+  #    - /tmp/
+  #  actions:
+  #    - echo: "Hello world"
+  #  tags:
+  #    - debug
+  #    - fast
+
+  - name: Digital Conservation
+    locations:
+      - ~/Downloads
+    filters:
+      - name:
+          contains:
+            - "ewitness"
+            - "digital-conservation"
+            - "digital conservation"
+            - "digital_conservation"
+          case_sensitive: false
+      - extension
+    actions:
+      - move: "~/storage/digital-conservation/{name.lower()}.{extension.lower()}"
+      - macos_tags:
+          - "netbuilder (orange)"
+      #- write:
+      #    text: "{size.traditional} -- {relative_path}"
+      #    path: "./storage-index.org"
+      #    mode: "append"
