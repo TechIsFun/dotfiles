@@ -5,6 +5,8 @@
 # https://espanso.org/docs/
 
 secure_input_notification: false
+enable_passive: true
+passive_key: CTRL
 
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
@@ -13,14 +15,32 @@ matches:
   - trigger: ":espanso"
     replace: "Hi there!"
 
-  # Dates
+  # Date
   - trigger: ":date"
     replace: "{{mydate}}"
     vars:
       - name: mydate
         type: date
         params:
-          format: "%m/%d/%Y"
+          format: "%Y-%m-%d"
+
+  # Date (IT)
+  - trigger: ":itdate"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d/%m/%Y"
+
+  # Date
+  - trigger: ":timestamp"
+    replace: "{{timestamp}}"
+    vars:
+      - name: timestamp
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M:%S"
 
   # Shell commands
   - trigger: ":shell"
@@ -31,8 +51,105 @@ matches:
         params:
           cmd: "echo Hello from your shell"
 
+  # cht.sh
+  - trigger: ":cht"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: 'curl "https://cht.sh/$?QT&style=bw"'
+
+  - trigger: ":vcht"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: 'curl "https://cht.sh/$0?qT&style=bw"'
+
+  # GDG
+  - trigger: ":gdgv"
+    replace: "GDG Venezia"
+    
+
   # Multicerta
-  - trigger: ":mprov"
+  - trigger: "__ew"
+    replace: "eWitness"
+  - trigger: "__dc"
+    replace: "Digital Conservation"
+  - trigger: "__mprov"
     replace: "Multiprovisioning"
   - trigger: ":mcert"
     replace: "Multicerta"
+  - trigger: ":standup"
+    replace: |
+      Andrea M.
+      =========
+
+      ieri:
+      - 
+      oggi:
+      - 
+
+      Piero
+      =====
+
+      ieri:
+      -
+      oggi:
+      - 
+
+      Sasha
+      =====
+
+      ieri:
+      -
+      oggi:
+      - 
+
+      Simone
+      ======
+
+      ieri:
+      - 
+      oggi:
+      - 
+
+      Michele
+      =======
+
+      ieri:
+      - 
+      oggi:
+      - 
+
+      Nicola V.
+      =========
+
+      ieri:
+      - 
+      oggi:
+      - 
+
+      Nicola F.
+      =========
+
+      ieri:
+      - 
+      oggi:
+      - 
+
+      Andrea S.
+      =========
+
+      ieri:
+      - 
+      oggi:
+      -
+
+  # Misc
+  - trigger: ":shebang"
+    replace: "#!/bin/sh"
