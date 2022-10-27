@@ -1,0 +1,176 @@
+matches:
+  - trigger: ":espanso"
+    replace: Hi there!
+  
+  # Codice fiscale
+  - trigger: ":cf"
+    replace: "MGLNDR81L25L736U"
+
+  # Currencies
+  - trigger: ":eur"
+    replace: €
+    propagate_case: true
+
+  # Special chars
+  - trigger: ":aacute"
+    replace: á
+    propagate_case: true
+  - trigger: ":eacute"
+    replace: é
+    propagate_case: true
+
+  # Typos
+  - triggers: 
+      - 'perche'
+      - 'perchè'
+    replace: perché
+    propagate_case: true
+    word: true
+  - trigger: "a'"
+    replace: à
+    propagate_case: true
+  - trigger: "u'"
+    replace: ù
+    propagate_case: true
+  #- trigger: "piu"
+  #  replace: più
+  #  propagate_case: true
+  #  word: true
+  - trigger: "lunedi"
+    replace: lunedì
+    propagate_case: true
+    word: true
+  - trigger: "gia"
+    replace: già
+    propagate_case: true
+    word: true
+  - trigger: "e'"
+    replace: è
+    propagate_case: true
+    word: true # questo mi garantisce che non venga sostituita quando l'apice è un vero e proprio apice e non un accento
+  - trigger: "netbuiler"
+    replace: netbuilder
+    propagate_case: true
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%Y-%m-%d"
+  - trigger: ":itdate"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d/%m/%Y"
+  - trigger: ":timestamp"
+    replace: "{{timestamp}}"
+    vars:
+      - name: timestamp
+        type: date
+        params:
+          format: "%Y-%m-%d %H:%M:%S"
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: echo Hello from your shell
+  # The only cheat sheet you need
+  - trigger: ":cht"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "curl \"https://cht.sh/$?QT&style=bw\""
+  - trigger: ":vcht"
+    replace: "{{output}}"
+    passive_only: true
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "curl \"https://cht.sh/$0?qT&style=bw\""
+  - trigger: ":gdgv"
+    replace: GDG Venezia
+  - trigger: __ew
+    replace: eWitness
+  - trigger: __dc
+    replace: Digital Conservation
+  - trigger: __mprov
+    replace: Multiprovisioning
+  - trigger: ":mcert"
+    replace: Multicerta
+  - trigger: ":standup"
+    replace: |
+      Andrea M.
+      =========
+      
+      ieri:
+      - 
+      oggi:
+      - 
+      
+      Piero
+      =====
+      
+      ieri:
+      -
+      oggi:
+      - 
+      
+      Sasha
+      =====
+      
+      ieri:
+      -
+      oggi:
+      - 
+      
+      Simone
+      ======
+      
+      ieri:
+      - 
+      oggi:
+      - 
+      
+      Michele
+      =======
+      
+      ieri:
+      - 
+      oggi:
+      - 
+      
+      Nicola V.
+      =========
+      
+      ieri:
+      - 
+      oggi:
+      - 
+      
+      Nicola F.
+      =========
+      
+      ieri:
+      - 
+      oggi:
+      - 
+      
+      Andrea S.
+      =========
+      
+      ieri:
+      - 
+      oggi:
+      -
+  - trigger: ":shebang"
+    replace: "#!/bin/sh"
