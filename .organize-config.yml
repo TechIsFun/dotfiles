@@ -3,6 +3,21 @@
 # docs: https://organize.readthedocs.io/en/latest/
 
 rules:
+
+  - name: Sposta le fatture elettroniche in emacs-org
+    locations:
+      - ~/Downloads
+    filters:
+      - name:
+          startswith: IT
+      - extension: xml
+    actions:
+      - move: "~/repositories/emacs-org/2-area/finanze/fatture-elettroniche/"
+      - shell: |
+          cd ~/repositories/emacs-org/
+          git add 2-area/finanze/fatture-elettroniche/{name}.{extension}
+#          git commit -m "Aggiunta fattura elettronica {name}.{extension}" 2-area/finanze/fatture-elettroniche/{name}.{extension}
+
   #- name: My first rule
   #  locations:
   #    - /tmp/
@@ -12,23 +27,39 @@ rules:
   #    - debug
   #    - fast
 
-  - name: Digital Conservation
-    locations:
-      - ~/Downloads
-    filters:
-      - name:
-          contains:
-            - "ewitness"
-            - "digital-conservation"
-            - "digital conservation"
-            - "digital_conservation"
-          case_sensitive: false
-      - extension
-    actions:
-      - move: "~/storage/digital-conservation/{name.lower()}.{extension.lower()}"
-      - macos_tags:
-          - "netbuilder (orange)"
+  #- name: Digital Conservation
+  #  locations:
+  #    - ~/Downloads
+  #  filters:
+  #    - name:
+  #        contains:
+  #          - "ewitness"
+  #          - "digital-conservation"
+  #          - "digital conservation"
+  #          - "digital_conservation"
+  #        case_sensitive: false
+  #    - extension
+  #  actions:
+  #    - macos_tags:
+  #        - "digital-conservation (orange)"
+  #    - move: "~/storage/googledrive/1-projects/digital-conservation/{name.lower()}.{extension.lower()}"
       #- write:
       #    text: "{size.traditional} -- {relative_path}"
       #    path: "./storage-index.org"
       #    mode: "append"
+
+  #- name: Multicerta
+  #  locations:
+  #    - ~/Downloads
+  #  filters:
+  #    - name:
+  #        contains:
+  #          - "multicerta"
+  #        case_sensitive: false
+  #    - extension
+  #  actions:
+  #    - macos_tags:
+  #        - "multicerta (orange)"
+  #    - move: "~/storage/googledrive/1-projects/multicerta/{name.lower()}.{extension.lower()}"
+
+# todo: devo creare le corrispondenti regole anche con target "dir": https://organize.readthedocs.io/en/latest/rules/#targeting-directories
