@@ -1,7 +1,7 @@
 matches:
   - trigger: ":espanso"
     replace: Hi there!
-  
+
   # Codice fiscale
   - trigger: ":cf"
     replace: "MGLNDR81L25L736U"
@@ -20,7 +20,7 @@ matches:
     propagate_case: true
 
   # Typos
-  - triggers: 
+  - triggers:
       - 'perche'
       - 'perchè'
     replace: perché
@@ -31,6 +31,16 @@ matches:
     propagate_case: true
   - trigger: "u'"
     replace: ù
+    propagate_case: true
+  - trigger: "i'"
+    replace: ì
+    propagate_case: true
+  - trigger: "o'"
+    #regex: "(?!(po'))([a-zA-Z]o')|(\bo')"
+    replace: ò
+    propagate_case: true
+  - trigger: "pò"
+    replace: "po'"
     propagate_case: true
   #- trigger: "piu"
   #  replace: più
@@ -48,6 +58,10 @@ matches:
     replace: è
     propagate_case: true
     word: true # questo mi garantisce che non venga sostituita quando l'apice è un vero e proprio apice e non un accento
+  - trigger: "ce'"
+    replace: "c'è"
+    propagate_case: true
+    word: true
   - trigger: "netbuiler"
     replace: netbuilder
     propagate_case: true
@@ -111,65 +125,65 @@ matches:
     replace: |
       Andrea M.
       =========
-      
+
       ieri:
-      - 
+      -
       oggi:
-      - 
-      
+      -
+
       Piero
       =====
-      
+
       ieri:
       -
       oggi:
-      - 
-      
+      -
+
       Sasha
       =====
-      
+
       ieri:
       -
       oggi:
-      - 
-      
+      -
+
       Simone
       ======
-      
+
       ieri:
-      - 
+      -
       oggi:
-      - 
-      
+      -
+
       Michele
       =======
-      
+
       ieri:
-      - 
+      -
       oggi:
-      - 
-      
+      -
+
       Nicola V.
       =========
-      
+
       ieri:
-      - 
+      -
       oggi:
-      - 
-      
+      -
+
       Nicola F.
       =========
-      
+
       ieri:
-      - 
+      -
       oggi:
-      - 
-      
+      -
+
       Andrea S.
       =========
-      
+
       ieri:
-      - 
+      -
       oggi:
       -
   - trigger: ":shebang"

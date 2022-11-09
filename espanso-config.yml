@@ -2,6 +2,5 @@
 # Original file: default.yml
 
 secure_input_notification: false
-search_trigger: false
 search_shortcut: off
 enable_passive: true
