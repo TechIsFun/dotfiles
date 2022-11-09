@@ -10,13 +10,43 @@ rules:
     filters:
       - name:
           startswith: IT
-      - extension: xml
+      - extension:
+          - xml
     actions:
       - move: "~/repositories/emacs-org/2-area/finanze/fatture-elettroniche/"
       - shell: |
           cd ~/repositories/emacs-org/
           git add 2-area/finanze/fatture-elettroniche/{name}.{extension}
-#          git commit -m "Aggiunta fattura elettronica {name}.{extension}" 2-area/finanze/fatture-elettroniche/{name}.{extension}
+
+  - name: Converte le fatture elettroniche da p7m a xml e le mette in  emacs-org
+    locations:
+      - ~/Downloads
+    filters:
+      - name:
+          startswith: IT
+      - extension:
+         - p7m
+    actions:
+      - shell: |
+          openssl smime -decrypt -in {path} -inform DER -verify -noverify -out ~/repositories/emacs-org/2-area/finanze/fatture-elettroniche/{name}
+          cd ~/repositories/emacs-org/
+          git add 2-area/finanze/fatture-elettroniche/{name}
+      - move: "~/repositories/emacs-org/2-area/finanze/fatture-elettroniche/"
+
+  - name: Sposta i documenti da archiviare in Paperless nella dir CONSUME
+    locations:
+      - ~/Downloads
+    filters:
+      - name:
+          contains:
+            - invoice
+            - fastweb
+            - fattura
+          case_sensitive: false
+      - extension:
+          - pdf
+    actions:
+      - move: "/Users/andrea/4ARCHIVE/PAPERLESS/CONSUME/"
 
   #- name: My first rule
   #  locations:
