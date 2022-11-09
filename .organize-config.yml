@@ -42,6 +42,7 @@ rules:
             - invoice
             - fastweb
             - fattura
+            - GetCedolino
           case_sensitive: false
       - extension:
           - pdf
