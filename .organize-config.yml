@@ -40,6 +40,7 @@ rules:
       - name:
           contains:
             - invoice
+            - nota-spese
             - fastweb
             - fattura
             - GetCedolino
