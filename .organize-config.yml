@@ -45,6 +45,7 @@ rules:
             - fattura
             - GetCedolino
             - scontrino
+            - bolletta
           case_sensitive: false
       - extension:
           - pdf
