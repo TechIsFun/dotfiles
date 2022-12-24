@@ -46,6 +46,7 @@ rules:
             - GetCedolino
             - scontrino
             - bolletta
+            - F24
           case_sensitive: false
       - extension:
           - pdf
