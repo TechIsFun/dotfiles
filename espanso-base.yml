@@ -23,45 +23,48 @@ matches:
   - triggers:
       - 'perche'
       - 'perchè'
+      - "perche'"
     replace: perché
     propagate_case: true
-    word: true
-  - trigger: "a'"
-    replace: à
+  - trigger: "cosi'"
+    replace: "così"
     propagate_case: true
-  - trigger: "u'"
-    replace: ù
-    propagate_case: true
-  - trigger: "i'"
-    replace: ì
-    propagate_case: true
-  - trigger: "o'"
+  #- trigger: "a'"
+  #  replace: à
+  #  propagate_case: true
+  #- trigger: "u'"
+  #  replace: ù
+  #  propagate_case: true
+  #- trigger: "i'"
+  #  replace: ì
+  #  propagate_case: true
+  #- trigger: "o'"
     #regex: "(?!(po'))([a-zA-Z]o')|(\bo')"
-    replace: ò
+  #  replace: ò
+  #  propagate_case: true
+  #- trigger: "pò"
+  #  replace: "po'"
+  #  propagate_case: true
+  - trigger: "piu'"
+    replace: più
     propagate_case: true
-  - trigger: "pò"
-    replace: "po'"
+    word: true
+  - trigger: "puo'"
+    replace: può
     propagate_case: true
-  #- trigger: "piu"
-  #  replace: più
+    word: true
+  #- trigger: "lunedi"
+  #  replace: lunedì
   #  propagate_case: true
   #  word: true
-  - trigger: "lunedi"
-    replace: lunedì
-    propagate_case: true
-    word: true
-  - trigger: "gia"
-    replace: già
-    propagate_case: true
-    word: true
   - trigger: "e'"
     replace: è
     propagate_case: true
     word: true # questo mi garantisce che non venga sostituita quando l'apice è un vero e proprio apice e non un accento
-  - trigger: "ce'"
+  - trigger: "c'e'"
     replace: "c'è"
     propagate_case: true
-    word: true
+    word: false
   - trigger: "netbuiler"
     replace: netbuilder
     propagate_case: true
@@ -121,70 +124,245 @@ matches:
     replace: Multiprovisioning
   - trigger: ":mcert"
     replace: Multicerta
-  - trigger: ":standup"
-    replace: |
-      Andrea M.
-      =========
-
-      ieri:
-      -
-      oggi:
-      -
-
-      Piero
-      =====
-
-      ieri:
-      -
-      oggi:
-      -
-
-      Sasha
-      =====
-
-      ieri:
-      -
-      oggi:
-      -
-
-      Simone
-      ======
-
-      ieri:
-      -
-      oggi:
-      -
-
-      Michele
-      =======
-
-      ieri:
-      -
-      oggi:
-      -
-
-      Nicola V.
-      =========
-
-      ieri:
-      -
-      oggi:
-      -
-
-      Nicola F.
-      =========
-
-      ieri:
-      -
-      oggi:
-      -
-
-      Andrea S.
-      =========
-
-      ieri:
-      -
-      oggi:
-      -
   - trigger: ":shebang"
     replace: "#!/bin/sh"
+  - trigger: "saro'"
+    replace: "sarò"
+    propagate_case: true
+    word: true
+  - trigger: "li'"
+    replace: "lì"
+    propagate_case: true
+    word: true
+  - trigger: "qualita’"
+    replace: "qualità"
+    propagate_case: true
+    word: true
+  - trigger: "pero'"
+    replace: "però"
+    propagate_case: true
+    word: true
+  - trigger: "realta'"
+    replace: "realtà"
+    propagate_case: true
+    word: true
+  - trigger: "dovra'"
+    replace: "dovrà"
+    propagate_case: true
+    word: true
+  - trigger: "attivita'"
+    replace: "attività"
+    propagate_case: true
+    word: false # se false to match also "sottoattivita'", "l'attivita'"...
+  - trigger: "gia'"
+    replace: "già"
+    propagate_case: true
+    word: true
+  - trigger: "possibilita'"
+    replace: "possibilità"
+    propagate_case: true
+    word: true
+  - trigger: "capira'"
+    replace: "capirà"
+    propagate_case: true
+    word: true
+  - trigger: "se'"
+    replace: "sé"
+    propagate_case: true
+    word: true
+  - trigger: "andra'"
+    replace: "andrà"
+    propagate_case: true
+    word: true
+  - trigger: "verra'"
+    replace: "verrà"
+    propagate_case: true
+    word: true
+  - trigger: "disponibilita'"
+    replace: "disponibilità"
+    propagate_case: true
+    word: true
+  - trigger: "novita'"
+    replace: "novità"
+    propagate_case: true
+    word: true
+  - trigger: "procedera'"
+    replace: "procederà"
+    propagate_case: true
+    word: true
+  - trigger: "difficolta’"
+    replace: "difficoltà"
+    propagate_case: true
+    word: true
+  - trigger: "fornira'"
+    replace: "fornirà"
+    propagate_case: true
+    word: true
+  - trigger: "sara'"
+    replace: "sarà"
+    propagate_case: true
+    word: true
+  - trigger: "identita'"
+    replace: "identità"
+    propagate_case: true
+    word: true
+  - trigger: "restituira'"
+    replace: "restituirà"
+    propagate_case: true
+    word: true
+  - trigger: "opportunita'"
+    replace: "opportunità"
+    propagate_case: true
+    word: true
+  - trigger: "criticita'"
+    replace: "criticità"
+    propagate_case: true
+    word: true
+  - trigger: "priorita'"
+    replace: "priorità"
+    propagate_case: true
+    word: true
+  - trigger: "responsabilita'"
+    replace: "responsabilità"
+    propagate_case: true
+    word: false
+  - trigger: "cio'"
+    replace: "ciò"
+    propagate_case: true
+    word: true
+  - trigger: "necessita'"
+    replace: "necessità"
+    propagate_case: true
+    word: true
+  - trigger: "modalita'"
+    replace: "modalità"
+    propagate_case: true
+    word: true
+  - trigger: "avvisero’"
+    replace: "avviserò"
+    propagate_case: true
+    word: true
+  - trigger: "dovro’"
+    replace: "dovrò"
+    propagate_case: true
+    word: true
+  - trigger: "dira'"
+    replace: "dirà"
+    propagate_case: true
+    word: true
+  - trigger: "condividera'"
+    replace: "condividerà"
+    propagate_case: true
+    word: true
+  - trigger: "apparira'"
+    replace: "apparirà"
+    propagate_case: true
+    word: true
+  - trigger: "vedra'"
+    replace: "vedrà"
+    propagate_case: true
+    word: true
+  - trigger: "potra'"
+    replace: "potrà"
+    propagate_case: true
+    word: true
+  - trigger: "funzionalita'"
+    replace: "funzionalità"
+    propagate_case: true
+    word: true
+  - trigger: "tranquillita'"
+    replace: "tranquillità"
+    propagate_case: true
+    word: true
+  - trigger: "sincerita'"
+    replace: "sincerità"
+    propagate_case: true
+    word: true
+  - trigger: "giu'"
+    replace: "giù"
+    propagate_case: true
+    word: true
+  - trigger: "giu’"
+    replace: "giù"
+    propagate_case: true
+    word: true
+  - trigger: "potro'"
+    replace: "potrò"
+    propagate_case: true
+    word: true
+  - trigger: "difficolta'"
+    replace: "difficoltà"
+    propagate_case: true
+    word: true
+  - trigger: "serenita'"
+    replace: "serenità"
+    propagate_case: true
+    word: true
+  - trigger: "ricevera'"
+    replace: "riceverà"
+    propagate_case: true
+    word: true
+  - trigger: "integrera'"
+    replace: "integrerà"
+    propagate_case: true
+    word: true
+  - trigger: "accessibilita'"
+    replace: "accessibilità"
+    propagate_case: true
+    word: true
+  - trigger: "la'"
+    replace: "là"
+    propagate_case: true
+    word: true
+  - trigger: "inclusivita’"
+    replace: "inclusività"
+    propagate_case: true
+    word: true
+  - trigger: "durera'"
+    replace: "durerà"
+    propagate_case: true
+    word: true
+  - trigger: "occupera'"
+    replace: "occuperà"
+    propagate_case: true
+    word: true
+  - trigger: "felicita'"
+    replace: "felicità"
+    propagate_case: true
+    word: true
+  - trigger: "daro'"
+    replace: "darò"
+    propagate_case: true
+    word: true
+  - trigger: "dara'"
+    replace: "darà"
+    propagate_case: true
+    word: true
+  - trigger: "raccogliero'"
+    replace: "raccoglierò"
+    propagate_case: true
+    word: true
+  - trigger: "faro'"
+    replace: "farò"
+    propagate_case: true
+    word: true
+  - trigger: "caffe'"
+    replace: "caffè"
+    propagate_case: true
+    word: true
+  - trigger: "aiutera'"
+    replace: "aiuterà"
+    propagate_case: true
+    word: true
+  - trigger: "prendero'"
+    replace: "prenderò"
+    propagate_case: true
+    word: true
+  - trigger: "opportunita'"
+    replace: "opportunità"
+    propagate_case: true
+    word: true
+  - trigger: "cos'e'"
+    replace: "cos'è"
+    propagate_case: true
+    word: true
