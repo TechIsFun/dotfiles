@@ -366,3 +366,35 @@ matches:
     replace: "cos'è"
     propagate_case: true
     word: true
+  - trigger: "societa'"
+    replace: "società"
+    propagate_case: true
+    word: true
+  - trigger: "finalita'"
+    replace: "finalità"
+    propagate_case: true
+    word: true
+  - trigger: "citta'"
+    replace: "città"
+    propagate_case: true
+    word: true
+  - trigger: "subira'"
+    replace: "subirà"
+    propagate_case: true
+    word: true
+  - trigger: "andro'"
+    replace: "andrò"
+    propagate_case: true
+    word: true
+  - trigger: "tranquillita'"
+    replace: "tranquillità"
+    propagate_case: true
+    word: true
+  - trigger: "dovro'"
+    replace: "dovrò"
+    propagate_case: true
+    word: true
+  - trigger: "comodita'"
+    replace: "comodità"
+    propagate_case: true
+    word: true
