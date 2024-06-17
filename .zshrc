@@ -58,6 +58,12 @@ export PATH="$HOME/fvm/versions/stable/bin:$HOME/.pub-cache/bin:$PATH"
 
 
 ########################################
+# Android
+########################################
+
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+
+########################################
 # Homebrew
 ########################################
 export HOMEBREW_AUTO_UPDATE_SECS=172800 # update every 2 days
